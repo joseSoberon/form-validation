@@ -29,7 +29,16 @@ form > div {
 }
 
 label + input, label + select {
-    margin-top: 5px;
+    margin-top:
+    5px;
+}
+
+.valid {
+    background-color: #dfd;
+}
+
+.invalid {
+    background-color: #fdd;
 }
 
 .submit {
