@@ -112,6 +112,13 @@ class Input extends Element {
             this.error.textContent = "Entered value need to be a valid format";
         }
     }
+
+    checkValid() {
+        if (this.container.validity.valid) {
+            return true;
+        }
+        return false;
+    }
 }
 
 class Select extends Element {
@@ -130,6 +137,13 @@ class Select extends Element {
                 this.error.textContent = "Please Select a Country";
             }
         })
+    }
+
+    checkValid() {
+        if (this.container.value != "default") {
+            return true;
+        }
+        return false;
     }
 }
 
@@ -151,6 +165,21 @@ class Password extends Input {
             }
         })
     }
+
+    checkValid() {
+        if (this.container.validity.valid) {
+            return true;
+        }
+        return false;
+    }
+
+    confirmValid() {
+        if (this.container.value == this.confirmContainer.value) {
+            return true;
+        }
+        return false;
+    }
 }
+
 
 export { Input, Select, Password };
